@@ -1,0 +1,70 @@
+nohup: ignoring input
+=========================================
+  MagicFace 批次表情生成開始
+=========================================
+輸入圖像: ./processed_images/b.png
+背景圖像: ./processed_images/b_bg.png
+
+[1/8] 正在生成 快樂 (1_happy) 表情...
+  - AU組合: AU12+AU6
+  - 強度值: 8+6
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  9.01it/s]Loading pipeline components...:  60%|██████    | 3/5 [00:01<00:01,  1.82it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.30it/s]
+  ✓ 快樂 表情生成完成！
+
+[2/8] 正在生成 驚訝 (2_surprised) 表情...
+  - AU組合: AU1+AU2+AU5+AU26
+  - 強度值: 6+6+5+7
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:01<00:05,  1.45s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.34it/s]
+  ✓ 驚訝 表情生成完成！
+
+[3/8] 正在生成 生氣 (3_angry) 表情...
+  - AU組合: AU4+AU9
+  - 強度值: 7+5
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:01<00:05,  1.42s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.39it/s]
+  ✓ 生氣 表情生成完成！
+
+[4/8] 正在生成 悲傷 (4_sad) 表情...
+  - AU組合: AU1+AU4+AU15
+  - 強度值: 5+3+6
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  8.99it/s]Loading pipeline components...:  40%|████      | 2/5 [00:01<00:02,  1.16it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.33it/s]
+  ✓ 悲傷 表情生成完成！
+
+[5/8] 正在生成 厭惡 (5_disgusted) 表情...
+  - AU組合: AU9+AU15+AU17
+  - 強度值: 6+4+3
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:01<00:05,  1.42s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.34it/s]
+  ✓ 厭惡 表情生成完成！
+
+[6/8] 正在生成 恐懼 (6_fearful) 表情...
+  - AU組合: AU1+AU2+AU5+AU20
+  - 強度值: 5+5+6+5
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:01<00:05,  1.45s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.34it/s]
+  ✓ 恐懼 表情生成完成！
+
+[7/8] 正在生成 微笑 (7_neutral_smile) 表情...
+  - AU組合: AU12
+  - 強度值: 4
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:00<00:00,  9.04it/s]Loading pipeline components...:  60%|██████    | 3/5 [00:01<00:01,  1.85it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.34it/s]
+  ✓ 微笑 表情生成完成！
+
+[8/8] 正在生成 困惑 (8_confused) 表情...
+  - AU組合: AU4+AU1
+  - 強度值: 4+2
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  20%|██        | 1/5 [00:01<00:05,  1.45s/it]Loading pipeline components...: 100%|██████████| 5/5 [00:01<00:00,  3.36it/s]
+  ✓ 困惑 表情生成完成！
+
+=========================================
+  所有表情生成完成！
+=========================================
+
+輸出結果：
+  - output/1_happy/b.png (299K)
+  - output/2_surprised/b.png (290K)
+  - output/3_angry/b.png (289K)
+  - output/4_sad/b.png (298K)
+  - output/5_disgusted/b.png (304K)
+  - output/6_fearful/b.png (304K)
+  - output/7_neutral_smile/b.png (299K)
+  - output/8_confused/b.png (292K)
+
+總共生成 8 種表情
