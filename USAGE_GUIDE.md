@@ -352,5 +352,95 @@ MagicFace 使用以下技術：
 
 ---
 
-**最後更新**: 2025-11-28
-**版本**: 1.0
+## 📦 為什麼從 GitHub 克隆後有些檔案不見了？
+
+### 不包含在 GitHub 儲存庫中的內容
+
+為了控制儲存庫大小並符合 GitHub 限制，以下內容**不會上傳**到 GitHub：
+
+#### 1. **大型模型文件**（總計約 10GB）
+
+| 檔案/目錄 | 大小 | 為什麼不上傳 |
+|-----------|------|-------------|
+| `models--mengtingwei--magicface/` | ~6.5GB | 超過 GitHub 單檔 100MB 限制 |
+| `models--sd-legacy--stable-diffusion-v1-5/` | ~800MB | 模型文件太大 |
+| `denoising_unet/` | ~3.3GB | 模型權重文件 |
+| `ID_enc/` | ~3.3GB | 模型權重文件 |
+| `checkpoints/` | ~269MB | 檢查點文件 |
+| `third_party_files/` | ~1.3GB | 第三方模型 |
+| `79999_iter.pth` | ~51MB | 訓練權重 |
+
+**解決方法**：按照「必要模型文件下載」章節從 HuggingFace 下載
+
+#### 2. **輸出和處理過的圖像**
+
+| 目錄 | 說明 |
+|------|------|
+| `output/` | 你生成的表情圖片會儲存在這裡 |
+| `processed_images/` | 預處理後的輸入圖片 |
+| `test_images/` | 你自己的測試圖片 |
+
+**原因**：這些是使用者個人生成的內容，每個人都不同
+
+**解決方法**：執行程式後會自動生成，或手動建立目錄：
+```bash
+mkdir -p output processed_images test_images
+```
+
+#### 3. **快取和臨時文件**
+
+| 檔案/目錄 | 說明 |
+|-----------|------|
+| `.cache/`, `.locks/` | HuggingFace 模型快取 |
+| `__pycache__/` | Python 編譯快取 |
+| `*.log` | 執行日誌 |
+
+**原因**：這些是執行時自動生成的臨時文件
+
+**解決方法**：程式執行時會自動建立
+
+#### 4. **IDE 和環境配置**
+
+| 檔案/目錄 | 說明 |
+|-----------|------|
+| `.idea/`, `.vscode/` | IDE 個人設定 |
+| `.env` | 環境變數（可能包含敏感資訊） |
+
+**原因**：每個開發者的環境設定不同
+
+### 克隆後的完整設定流程
+
+```bash
+# 1. 克隆儲存庫
+git clone https://github.com/sab1126/magicface.git
+cd magicface
+
+# 2. 安裝依賴
+pip install -r requirements.txt
+
+# 3. 下載模型（最重要！）
+# 參見「必要模型文件下載」章節
+pip install huggingface_hub
+huggingface-cli download mengtingwei/magicface --local-dir models--mengtingwei--magicface
+huggingface-cli download runwayml/stable-diffusion-v1-5 --local-dir models--sd-legacy--stable-diffusion-v1-5
+
+# 4. 建立輸出目錄
+mkdir -p output processed_images test_images
+
+# 5. 開始使用！
+# 將你的圖片放入專案目錄，然後執行預處理和推理
+```
+
+### 總結
+
+- ✅ **程式碼和文檔**：完整包含在 GitHub 中
+- ❌ **模型文件**：太大，需要從 HuggingFace 下載（約 10GB）
+- ❌ **輸出圖片**：執行程式後才會生成
+- ❌ **快取文件**：執行時自動建立
+
+這樣的設計讓 GitHub 儲存庫保持輕量（僅 ~5MB），克隆速度更快！
+
+---
+
+**最後更新**: 2025-12-02
+**版本**: 1.1
